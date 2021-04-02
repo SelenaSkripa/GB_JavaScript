@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание 5</title>
+</head>
+
+<body>
+    <script>
+        var a = parseInt(prompt('Введите первое число'));
+        var b = parseInt(prompt('Введите второе число'));
+
+        function amount(a, b) {
+            return (a + b);
+        };
+
+        function difference(a, b) {
+            return (a - b);
+        };
+
+        function division(a, b) {
+            if(b == 0 || a == 0) {
+                alert('Деление на ноль невозможно');
+            }
+            return (a / b);
+        };
+
+        function multiplication(a, b) {
+            return (a * b);
+        };
+
+        sum = amount(a, b);
+        dif = difference(a, b);
+        div = division(a, b);
+        multip = multiplication(a, b);
+
+        if (isNaN(a) || isNaN(b)) {
+            alert('Нужно было ввести число')
+        } else {
+            alert('Результат сложения введенных чисел = ' + sum);
+            alert('Результат вычитания введенных чисел = ' +dif);
+            alert('Результат деления введенных чисел = ' +div.toFixed(2)); 
+            alert('Результат умножения введенных чисел = ' + multip);
+        };
+    </script>
+</body>
+
+</html>
