@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание 6</title>
+</head>
+
+<body>
+
+    <script>
+        var arg1 = parseInt(prompt('Введите первое число'));
+        var arg2 = parseInt(prompt('Введите второе число'));
+
+
+        if (isNaN(arg1) || isNaN(arg2)) {
+            alert('Нужно было ввести число')
+        } else {
+
+            var operation = prompt(
+                'Какую операцию выполнить? сложение (+), вычитание (-), деление (/) или умножение (*)?');
+            var result;
+
+            function amount(arg1, arg2) {
+                return (arg1 + arg2);
+            };
+
+            function difference(arg1, arg2) {
+                return (arg1 - arg2);
+            };
+
+            function division(arg1, arg2) {
+                return (arg1 / arg2);
+            };
+
+            function multiplication(arg1, arg2) {
+                return (arg1 * arg2);
+            }
+
+            function mathOperation(arg1, arg2, operation) {
+                switch (operation) {
+                    case "+":
+                        result = amount(arg1, arg2);
+                        alert('Результат сложения введенных чисел = ' + result);
+                        break;
+                    case "-":
+                        result = difference(arg1, arg2);
+                        alert('Результат вычитания введенных чисел = ' + result);
+                        break;
+                    case "/":
+                        result = division(arg1, arg2);
+                        alert('Результат деления введенных чисел = ' + result.toFixed(2));
+                        break;
+                    case "*":
+                        result = multiplication(arg1, arg2);
+                        alert('Результат умножения введенных чисел = ' + result);
+                        break;
+                };
+
+            };
+            mathOperation(arg1, arg2, operation);
+        };
+    </script>
+
+</body>
+
+</html>

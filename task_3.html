@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание 3</title>
+</head>
+
+<body>
+    <script>
+
+        question = confirm('Поиграем? Введите два числа "а" и "b": \n Если числа положительные - получим их разность, \n Если числа отрицательные - получим их произведение, \n Если числа разных знаков - получим их сумму.');
+
+        var a = +prompt('Введиет первое число');
+        var b = +prompt('Введите второе число');
+        var result;
+
+        if (isNaN(a) || isNaN(b)) {
+            alert('Нужно было ввести число')
+        } else  if (a >= 0 && b >= 0) {
+            result = a - b;
+            alert('Числа положительные и их разница = ' +result);
+        } else if (a <= 0 && b <= 0) {
+            result = a * b;
+            alert('Числа отрицательные и их произведение = ' +result);
+        } else if(a >= 0 && b <= 0 || a <= 0 && b >= 0) {
+            result = a + b;
+            alert('У чисел разные знаки и их сумма = ' +result);
+        }
+
+    </script>
+</body>
+
+</html>
