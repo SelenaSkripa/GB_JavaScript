@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание 1</title>
+</head>
+
+<body>
+    <script>
+        console.log('Задание №1');
+        console.log('С помощью цикла while вывести все простые числа в промежутке от 0 до 100');
+
+        var number = 0;
+
+        while (number <= 100) {
+            var prime = true;
+            for (var i = 2; i < number; i++) {
+                if (number % i == 0) {
+                    prime = false;
+                }
+            }
+            if (prime) console.log(number);
+            number++;
+        }
+    </script>
+</body>
+
+</html>

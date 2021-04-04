@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание 2 и 3</title>
+</head>
+
+<body>
+    <script>
+        console.log('Организовать массив для хранения товаров в корзине');
+        console.log('Организовать функцию countBacketPrice для подсчета ее стоимости');
+        console.log('***************************************************************');
+
+        var backet = [{
+                id: 1,
+                productName: 'Молоко',
+                productPrice: 100
+            },
+            {
+                id: 2,
+                productName: 'Хлеб',
+                productPrice: 50
+            },
+            {
+                id: 3,
+                productName: 'Чай',
+                productPrice: 70
+            }
+        ];
+
+        console.log('В вашей корзине:');
+
+        function countBacketPrice(backet) {
+            var backetPrice = 0;
+            for (var pay of backet) {
+                backetPrice += pay.productPrice;
+                console.log(pay.productName + '. цена: ' + pay.productPrice + ' руб.');
+            }
+            return backetPrice;
+        }
+        console.log('Итого: ' + countBacketPrice(backet) + ' руб.');
+    </script>
+</body>
+
+</html>
