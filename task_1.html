@@ -25,6 +25,27 @@
             if (prime) console.log(number);
             number++;
         }
+
+        console.log('Второй вариант');
+
+        var MAXPRIME = 100;
+        var primes = [2, 3];
+        var n = 4;
+
+        while (n < MAXPRIME) {
+            var j = 0;
+            while (j < primes.length) {
+                if (n % primes[j] === 0) {
+                    break;
+                }
+                j++;
+            }
+            if (j === primes.length) {
+                primes.push(n);
+            }
+            n++;
+        }
+        console.log(primes);
     </script>
 </body>
 

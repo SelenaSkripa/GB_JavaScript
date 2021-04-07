@@ -14,6 +14,66 @@
         console.log('Организовать функцию countBacketPrice для подсчета ее стоимости');
         console.log('***************************************************************');
 
+        console.log('Самая простая корзина - массив');
+
+        var productName1 = ['Джинсы', 'Сапоги', 'Шапка'];
+        var basketPrice1 = [10, 20, 30];
+
+        var basketSum1 = 0;
+        for (var i = 0; i < basketPrice1.length; i++) {
+            basketSum1 += basketPrice1[i];
+        }
+        console.log(basketSum1);
+
+        console.log('***************************************************************');
+        console.log('Второй вариант корзины с названием товара и его ценой и количеством');
+
+        var basket2 = [
+            ['Джинсы', 10, 1],
+            ['Сапоги', 20, 2],
+            ['Шапка', 30, 3]
+        ];
+
+        var basketSum2 = 0;
+        for (var i = 0; i < basket2.length; i++) {
+            basketSum2 += basket2[i][1] + basket2[i][2];
+        }
+        console.log(basketSum2);
+
+
+        console.log('***************************************************************');
+        console.log('Третий вариант корзины через объекты');
+
+        var basket3 = [{
+                name: 'Джинсы',
+                price: 10,
+                color: 'red',
+                amount: 1,
+                getPrice: function (discount) {
+                    return this.price * (1 * (discount || 0));
+                }
+            },
+            {
+                name: 'Сапоги',
+                price: 20,
+                color: 'green',
+                amount: 2,
+                getPrice: function (discount) {
+                    return this.price * (1 * (discount ? discount : 1));
+                }
+            }
+        ]
+
+        var basketSum3 = 0;
+        for (var k = 0; k < basket3.length; k++) {
+            basketSum3 += basket3[k].price * basket3[k].amount;
+        }
+        console.log(basketSum3);
+
+
+        console.log('***************************************************************');
+        console.log('Мой вариант корзины с урока');
+
         var backet = [{
                 id: 1,
                 productName: 'Молоко',
@@ -42,7 +102,51 @@
             return backetPrice;
         }
         console.log('Итого: ' + countBacketPrice(backet) + ' руб.');
+
+        console.log('***************************************************************');
+        console.log('Корзина с разбора урока');
+
+        var productCatalog = {
+            jeansRed: {
+                name: 'Джинсы',
+                price: 10,
+                color: 'red',
+                getPrice: function (discount) {
+                    return this.price * (1 * (discount || 0));
+                }
+            },
+            bootGreen: {
+                name: 'Сапоги',
+                price: 20,
+                color: 'green',
+                getPrice: function (discount) {
+                    return this.price * (1 * (discount ? discount : 1));
+                }
+            }
+        }
+
+        basketProduct = [{
+                productId: 'jeansRed',
+                amount: 10
+            },
+            {
+                productId: 'bootGreen',
+                amount: 20
+            }
+        ]
+
+        var basketSumm = 0;
+        for (var l = 0; l < basketProduct.length; l++) {
+            var productId = basketProduct[l].productId;
+            basketSumm += productCatalog[productId].getPrice() * basketProduct[l].amount;
+        }
+
+        console.log(basketSumm);
+
+
     </script>
+
+
 </body>
 
 </html>
