@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2 задание</title>
+</head>
+
+<body>
+    <script>
+        console.log('Реализовать корзину с помощью объектов');
+        console.log('перенести функционал подсчета корзины на объектно-ориентированную базу');
+
+        var productCard = {
+            'id_1': { // Каждому пролукты присваиваем свой Id. даже если продукт удалили - этот id для новых продуктов не используем.
+                article: 'pr_1', // Артикул модели.
+                productName: 'Босоножки женские', // Название продукта - отображается для пользователя.
+                productUrl: 'https//:#', // Адрес страницы с карточкой товара.
+                productImg: 'img/pr_1.jpg', // Фото товара
+                productCategory: 'Босоножки', //тут скорее всего будет id категории, а не ее название прописью. Нужно для фильтрации товара по категориям.
+                color: 'Красный', // у одной и той же модели может быть один артикул, но разыне цвета. То есть значение должно меняться.
+                size: '39', //Это значение тоже должно менять по размерному ряду модели.
+                price: 2800.00, // Цена товара.
+                manufacturer: 'Laura Potti', // Производитель. Так же нужен для фильтрации товара, но сами производители тоже должны идти под id.
+                amount: 1
+            },
+            'id_2': {
+                article: 'pr_2',
+                productName: 'Туфли женские',
+                productUrl: 'https//:#',
+                productImg: 'img/pr_2.jpg',
+                productCategory: 'Туфли',
+                color: 'Белый',
+                size: '38',
+                price: 2200.00,
+                manufacturer: 'Laura Potti',
+                amount: 1
+            },
+            'id_3': {
+                article: 'pr_3',
+                productName: 'Сапоги женские',
+                productUrl: 'https//:#',
+                productImg: 'img/pr_3.jpg',
+                productCategory: 'Сапоги',
+                color: 'Черный',
+                size: '36',
+                price: 5000.00,
+                manufacturer: 'Laura Potti',
+                amount: 1
+            }
+        }
+
+        console.log(productCard);
+        console.log('---------------------');
+        console.log('В вашей корзине:');
+
+        var basket = {
+            'id_1': {
+                productName: 'Босоножки женские',
+                price: 2800.00,
+                amount: 1
+            },
+            'id_2': {
+                productName: 'Туфли женские',
+                price: 2200.00,
+                amount: 1
+            },
+            'id_3': {
+                productName: 'Сапоги женские',
+                price: 5000.00,
+                amount: 1
+            }
+
+        }
+
+        console.log(basket);
+
+        console.log('---------------------');
+        console.log('Сумма покупки составит:');
+
+        var basketSumm = 0;
+        for (var pay in basket) {
+            basketSumm += basket[pay].price;
+        }
+        console.log(basketSumm +' рублей.');
+    </script>
+</body>
+
+</html>

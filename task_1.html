@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1 задание</title>
+</head>
+
+<body>
+    <script>
+
+        console.log('Написать функцию, преобразующую число в объект. Передавая на выход число от 0 до 999,');
+        console.log('мы должны получить на выходе объект, в свойствах которого описаны единицы, десятки и сотни.');
+        console.log('Если число превышает 999, необходимо выдать соотвествубщее сообщение в консоль и вернуть пустой объект.');
+
+        var result = {
+            number: parseInt(prompt('Введите число от 0 до 999')),
+            hundreds: 0,
+            dozens: 0,
+            units: 0
+        };
+        if (isNaN(result.number)) {
+            console.log('Нужно было ввести число!');
+        } else if (result.number <= 999) {
+            result.hundreds = Math.floor(result.number / 100 % 10);
+            result.dozens = Math.floor(result.number / 10 % 10);
+            result.units = Math.floor(result.number % 10);
+        } else {
+            result.number = 0;
+            console.log('Вы ввели слишком большое число!');
+        }
+        console.log(result);
+    </script>
+</body>
+
+</html>
