@@ -10,10 +10,11 @@
 
 <body>
     <script>
-
         console.log('Написать функцию, преобразующую число в объект. Передавая на выход число от 0 до 999,');
         console.log('мы должны получить на выходе объект, в свойствах которого описаны единицы, десятки и сотни.');
-        console.log('Если число превышает 999, необходимо выдать соотвествубщее сообщение в консоль и вернуть пустой объект.');
+        console.log(
+            'Если число превышает 999, необходимо выдать соотвествубщее сообщение в консоль и вернуть пустой объект.'
+            );
 
         var result = {
             number: parseInt(prompt('Введите число от 0 до 999')),
@@ -32,6 +33,28 @@
             console.log('Вы ввели слишком большое число!');
         }
         console.log(result);
+
+
+        console.log('================================================================');
+        console.log('Вывод массива через функцию');
+
+        var userNumber = parseInt(prompt('Введите число от 0 до 999'));
+
+        function getResult(num) {
+            var DIGITSPROPS = ['units', 'dozens', 'hundreds'];
+            var number = {};
+            for (var i = 0; i < 3; i++) {
+                number[DIGITSPROPS[i]] = num % 10;
+                num = Math.floor(num / 10);
+            }
+            return number;
+        }
+
+        if (userNumber <= 999 && userNumber >= 0) {
+            console.log(getResult(userNumber))
+        } else {
+            console.log(userNumber = {})
+        }
     </script>
 </body>
 
