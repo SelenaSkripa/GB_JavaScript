@@ -40,3 +40,16 @@
     font-weight: bold;
     text-align: center;
 }
+
+table {
+    font-family: Impact, sans-serif;
+    font-size: 30px;
+    background-color: white;
+    color: #000000;
+ }
+ td {
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    vertical-align: middle;
+ }
