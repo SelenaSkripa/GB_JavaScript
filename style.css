@@ -1,0 +1,55 @@
+.container {
+    width: 900px;
+    height: 1300px;
+    margin: auto;
+    padding: 5px;
+    text-align: justify;
+    border: 1px solid grey;
+    font-size: 20px;
+}
+.border-out {
+    width: 760px;
+    height: 820px;
+    margin: auto;
+    border: 5px solid grey;
+}
+
+.border-in {
+    width: 740px;
+    height: 800px;
+    margin: 5px auto;
+    border: 5px solid grey;
+}
+
+.chessboard {
+    background: grey;
+    width: 660px;
+    height: 660px;
+    padding: 60px 0 60px 60px;
+    margin: 10px 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cell {
+    width: 60px;
+    height: 60px;
+    margin: 0;
+    padding: 0;
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+}
+
+table {
+    font-family: Impact, sans-serif;
+    font-size: 30px;
+    background-color: white;
+    color: #000000;
+ }
+ td {
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    vertical-align: middle;
+ }
